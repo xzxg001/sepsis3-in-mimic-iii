@@ -59,7 +59,7 @@ sudo apt-get install git
 Next, clone the repository with the `--recursive` flag as it relies on a distinct repository (mimic-code):
 
 ```
-git clone https://github.com/alistairewj/sepsis3-mimic sepsis3-mimic --recursive
+git clone https://github.com/xzxg001/sepsis3-in-mimic-iii sepsis3-mimic --recursive
 ```
 
 If you already have the repository cloned on your local computer, but you didn't use the `--recursive` flag, you can clone the submodule easily:
@@ -103,11 +103,8 @@ set search_path to public,mimiciii;
 
 Either way, the generation of all the tables can take anywhere from 10 minutes to about an hour, depending on your system. You may see a lot of `NOTICE` warnings: don't worry about them. The query logic is "check if the table exists, and if it does, drop it". These warnings indicate that the table did not exist (and nor would you expect it to on a fresh install!).
 
-### (b) Download the CSVs from the MIMIC-III Derived Data repository
-
-The data files can be downloaded from the [MIMIC-III Derived Data Repository](https://physionet.org/works/MIMICIIIDerivedDataRepository/).
-If you have a PhysioNetWorks account which has been approved for access to MIMIC-III, access the [sepsis3-mimic derived data repository here](https://physionet.org/works/MIMICIIIDerivedDataRepository/files/approved/sepsis3-mimic/), supplying your username and password when prompted.
-The data file is "sepsis3-data.zip". By default, the code expects the data to be extracted in the `data` subfolder of this repository.
+### （b）Use pre-generated CSVs directly
+If you can't access the MIMIC-III database, you can download the pre-generated CSV files from [myemail](xzxg001@gmail.com) for help.
 
 ## 3. Run analysis
 
