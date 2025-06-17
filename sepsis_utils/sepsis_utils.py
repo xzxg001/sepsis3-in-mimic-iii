@@ -356,7 +356,7 @@ def print_demographics(df, idx=None):
 
                     curr_var_vec = tbl.index.values[0:-1]
                     # Extract table without totals
-                    tbl = tbl.ix[0:-1,0:-1]
+                    tbl = tbl.iloc[0:-1,0:-1]
 
                     # get the p-value
                     chi2, pvalue, dof, ex = scipy.stats.chi2_contingency( tbl, correction=False )
@@ -373,8 +373,8 @@ def print_demographics(df, idx=None):
                     # next print out individual race #s (no p-value)
                     for r in curr_var_vec:
                         print('{:20s}\t{:4g} ({:2.1f}%)\t{:4g} ({:2.1f}%)\t{:5s}'.format('  ' + r,
-                        tbl.loc[r,False], 100.0*tbl.loc[r,False].astype(float) / np.sum(tbl.loc[:,False]),
-                        tbl.loc[r, True], 100.0*tbl.loc[r, True].astype(float) / np.sum(tbl.loc[:, True]),
+                        tbl.loc[r,0], 100.0*tbl.loc[r,0].astype(float) / np.sum(tbl.loc[:,0]),
+                        tbl.loc[r, 1], 100.0*tbl.loc[r, 1].astype(float) / np.sum(tbl.loc[:, 1]),
                         '')) # no individual p-value
 
                 # additional lactate measurements output with lactate_max
